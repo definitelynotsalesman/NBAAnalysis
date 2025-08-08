@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 4.0.3) 
+project(NBA-Analysis)
+
+find_package(Boost REQUIRED)
+find_package(OpenSSL REQUIRED)
+
+find_package(Boost REQUIRED COMPONENTS filesystem)
+
+add_executable(report main.cpp)
+
+target_include_directories(report PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(my_app PRIVATE Boost::filesystem)
+include_directories(${OPENSSL_INCLUDE_DIR})
+target_link_libraries(your_target_name ${OPENSSL_LIBRARIES})
+
